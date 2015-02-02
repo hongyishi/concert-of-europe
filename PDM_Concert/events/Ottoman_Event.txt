@@ -2869,7 +2869,6 @@ country_event = {
 			attacker_goal = {
 				casus_belli = cut_down_to_size
 			}
-			call_ally = yes
 		}
 	}
 }
@@ -2951,6 +2950,7 @@ country_event = {
 			limit = {
 				has_country_flag = greek_question
 			}
+			end_war = TUR
 			clr_country_flag = greek_question
 		}
 		GRE = { clr_country_flag = legitimacy }

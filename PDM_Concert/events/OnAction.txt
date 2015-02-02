@@ -106,11 +106,6 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				owner = {
-					capital_scope = {
-						continent = europe
-					}
-				}
 				is_slave = no
 			}
 		}
@@ -178,14 +173,6 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				owner = {
-					capital_scope = {
-						continent = europe
-					}
-				}
-				any_owned_province = {
-					is_colonial = yes
-				}
 				is_slave = yes
 			}
 		}		

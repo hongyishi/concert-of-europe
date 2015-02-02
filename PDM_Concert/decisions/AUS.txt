@@ -792,6 +792,7 @@ political_decisions = {
 					}
 				}
 			}
+			MOL_673 = { remove_core = GLM }
 		}
 
 		ai_will_do = {

@@ -2,7 +2,6 @@ sprite = 4
 color = { 18 129 10 }
 strata = rich
 state_capital_only = yes
-is_artisan = yes
 research_points = 4
 research_optimum = 0.04
 
@@ -23,6 +22,8 @@ life_needs = {
 	canned_food = 6
 }
 everyday_needs = {
+	horses = 100
+	clipper_
 	steel = 100
 	bronze = 100
 	cement = 100
@@ -47,12 +48,16 @@ luxury_needs = {
 	opium  = 50
 	aeroplanes = 20
 	steamer_convoy = 5
+	clipper_convoy = 5
 	financial_services = 50
 }
 
 country_migration_target = {
 	factor = 0.01
-
+	modifier = {
+		factor = 0.5
+		is_vassal = yes
+	}
 	modifier = {
 		factor = 0.8
 		religious_policy = moralism

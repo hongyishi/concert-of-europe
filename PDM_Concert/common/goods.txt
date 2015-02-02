@@ -69,7 +69,7 @@ raw_material_goods = {
 		color = { 146 72 17 }
 	}
 	tropical_wood = { 
-		cost = 10
+		cost = 15
 		color = { 213 177 118 }
 	}
 	rubber = { 
@@ -269,7 +269,7 @@ consumer_goods = {
 		color = { 253 199 110 }
 	}
 	horses = {
-		cost = 8
+		cost = 10
 		color = { 253 199 110 }
 	}
 	shoes = {
@@ -282,7 +282,7 @@ consumer_goods = {
 		color = { 253 199 110 }
 	}
 	sugar = {
-		cost = 3
+		cost = 8
 		color = { 253 199 110 }
 	}
 	pharmaceuticals  = {

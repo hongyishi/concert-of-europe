@@ -34,7 +34,7 @@ everyday_needs = {
 	regular_clothes = 25
 	furniture = 15
 	cigarettes = 10
-	horses = 2
+	horses = 4
 	shoes = 10
 	electric_power = 20
 
@@ -57,7 +57,10 @@ luxury_needs = {
 
 country_migration_target = {
 	factor = 0.01
-
+	modifier = {
+		factor = 0.5
+		is_vassal = yes
+	}
 	modifier = {
 		factor = 0.8
 		religious_policy = moralism

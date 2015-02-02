@@ -129,6 +129,9 @@ infrastructure = {
 
 base_values = {
 	global_pop_militancy_modifier = -0.05
+	global_pop_consciousness_modifier = -0.05
+	supply_consumption = 1.0
+	RGO_throughput = -0.3
 }
 
 war = {
@@ -207,7 +210,6 @@ average_literacy = {
 	leadership = 1
 	org_regain = 1
 	unit_start_experience = 3
-	tax_efficiency = 0.2
 }
 
 plurality = {

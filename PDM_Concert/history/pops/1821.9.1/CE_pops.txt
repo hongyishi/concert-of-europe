@@ -29068,7 +29068,7 @@
 		religion = protestant
 
 	}
-	craftsmen = {
+	artisans = {
 
 		size = 6410
 		culture = south_german

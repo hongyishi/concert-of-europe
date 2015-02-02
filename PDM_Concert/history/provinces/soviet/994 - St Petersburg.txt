@@ -6,6 +6,11 @@ life_rating = 45
 terrain = forested_farmland
 naval_base = 1
 fort = 1
+state_building = {
+	level = 1
+	building = bakery 
+	upgrade = yes
+}
 1836.1.1 = {
 	naval_base = 2
 	railroad = 1

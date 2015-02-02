@@ -1,0 +1,36 @@
+#Failure of the Concert of Europe
+country_event = {
+	id = 19000
+	title = "Failure of the Concert of Europe"
+	desc = "With two European Great Powers now at war, the fragile peace created at the Congress of Vienna has permanently been disrupted. Europe is now at the mercy of the interests of the Great Powers."
+	major = yes
+	
+	trigger = {
+		exists = yes
+		has_global_flag = concert_of_europe
+		OR = {
+			tag = ENG
+			tag = FRA
+			tag = AUS
+			tag = PRU
+			tag = RUS
+		}
+		any_greater_power = {
+			OR = {
+				tag = ENG
+				tag = FRA
+				tag = AUS
+				tag = PRU
+				tag = RUS
+			}
+			war_with = THIS
+		}
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "Aaargh!"
+		clr_global_flag = concert_of_europe
+	}
+}

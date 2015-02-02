@@ -19,10 +19,10 @@ country_event = {
 		set_global_flag = money_injected
 		any_country = {
 			limit = { is_greater_power = yes }
-			treasury = 100000
+			treasury = 10000000
 		}
 		any_country = {
-			treasury = 50000
+			treasury = 5000000
 		}
 	}
 }

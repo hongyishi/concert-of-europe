@@ -1415,7 +1415,7 @@ nationalist_rebels = {
 	}
 	
 	
-	defection = none		# If the country seeks independence, defection specifies what type of provinces it wants.
+	defection = culture		# If the country seeks independence, defection specifies what type of provinces it wants.
 	independence = culture 		# Seeks independence for spawn province culture. Will not spawn at all if there is no suitable tag.
 	defect_delay = 12		# Can spontaneously declare independence after X months (earliest)
 	
@@ -4134,7 +4134,8 @@ separatist_rebels = {
 	}
 	
 	
-	defection = none		# If the country seeks independence, defection specifies what type of provinces it wants.
+	defection = culture		# If the country seeks independence, defection specifies what type of provinces it wants.
+	independence = culture 		# Seeks independence for spawn province culture. Will not spawn at all if there is no suitable tag.
 	defect_delay = 3		# Can spontaneously declare independence after X months (earliest)
 	
 	allow_all_cultures = no

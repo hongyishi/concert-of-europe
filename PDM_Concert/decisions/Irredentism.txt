@@ -615,6 +615,7 @@ political_decisions = {
 		}
 		
 		allow = {
+			always = yes
 			war = no
 			is_vassal = no
 			is_disarmed = no

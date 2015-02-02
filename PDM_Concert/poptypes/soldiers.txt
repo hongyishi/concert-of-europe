@@ -51,6 +51,7 @@ luxury_needs = {
 	coffee = 10
 	spices = 5
 	automobiles = 10
+	horses = 1
 	telephones = 10
 	wine = 10
 	cigars = 10
@@ -61,7 +62,10 @@ luxury_needs = {
 
 country_migration_target = {
 	factor = 0.01
-
+	modifier = {
+		factor = 0.5
+		is_vassal = yes
+	}
 	modifier = {
 		factor = 0.8
 		religious_policy = moralism

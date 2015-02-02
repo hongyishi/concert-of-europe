@@ -17,7 +17,7 @@ life_needs = {
 	canned_food = 6
 }
 everyday_needs = {
-	horses = 10	
+	horses = 20	
 	bronze = 10
 	steel = 10
 	sugar = 25
@@ -44,6 +44,7 @@ luxury_needs = {
 	fuel = 50
 	aeroplanes = 20
 	steamer_convoy = 5
+	clipper_convoy = 5
 	financial_services = 10
 }
 country_migration_target = {
@@ -219,6 +220,10 @@ country_migration_target = {
 			continent = south_america
 			continent = oceania
 		}
+	}
+	modifier = {
+		factor = 0.5
+		is_vassal = yes
 	}
 	modifier = {
 		factor = 0.5

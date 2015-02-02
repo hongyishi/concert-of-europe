@@ -1932,6 +1932,32 @@ political_decisions = {
 		}
 	}
 
+	land_of_opportunity2 = {
+		picture = liberty_enlightening_the_world
+		potential = {
+			tag = USA
+			NOT = { has_country_flag = land_of_opportunity2 }
+			has_global_flag = liberal_revolution_somewhere
+		}
+		
+		allow = {
+			war = no
+			government = democracy
+		}
+		
+		effect = {
+			set_country_flag = land_of_opportunity2
+			add_country_modifier = {
+				name = land_of_opportunity
+				duration = 3650
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	secret_police = {
 		alert = yes
 		potential = {	
@@ -1956,4 +1982,16 @@ political_decisions = {
 			factor = 1
 		}
 	}	
+	concert_of_europe_setup = {
+		potential = {
+			tag = AUS
+			always = no
+		}
+		allow = {
+			year = 1821
+		}
+		effect = {
+			set_global_flag = concert_of_europe
+		}
+	}
 }
