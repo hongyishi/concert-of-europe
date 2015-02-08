@@ -936,16 +936,16 @@ political_decisions = {
 						tag = LAT
 						tag = EST
 						tag = LIT
-					}
-					ai = yes
-					in_sphere = THIS
 				}
+					ai = yes
+							in_sphere = THIS
+						}
 				annex_to = THIS
-			}
+					}
 			any_country = {
-				limit = {
+					limit = {
 					NOT = { is_culture_group = south_slavic }
-					in_sphere = THIS
+							in_sphere = THIS
 					war = no
 				}
 				any_owned = {
@@ -953,7 +953,7 @@ political_decisions = {
 						OR = {
 							is_core = LAT
 							is_core = EST
-							is_core = LIT
+						is_core = LIT
 						}
 					}
 					secede_province = THIS
@@ -1047,16 +1047,16 @@ political_decisions = {
 						tag = LAT
 						tag = EST
 						tag = LIT
-					}
-					ai = yes
-					in_sphere = THIS
 				}
+					ai = yes
+							in_sphere = THIS
+						}
 				annex_to = THIS
-			}
+					}
 			any_country = {
-				limit = {
+					limit = {
 					NOT = { is_culture_group = south_slavic }
-					in_sphere = THIS
+							in_sphere = THIS
 					war = no
 				}
 				any_owned = {
@@ -1064,8 +1064,8 @@ political_decisions = {
 						OR = {
 							is_core = LAT
 							is_core = EST
-							is_core = LIT
-						}
+						is_core = LIT
+			}
 					}
 					secede_province = THIS
 				}
@@ -1682,7 +1682,7 @@ political_decisions = {
 			set_global_flag = estonian_estonia
 			349 = { change_province_name = "Tallinn" }
 			350 = { change_province_name = "Narva" }
-			351 = { change_province_name = "Pärnu" }
+			351 = { change_province_name = "Parnu" }
 			352 = { change_province_name = "Tartu" }
 			353 = { change_province_name = "Saaremaa" }
 			prestige = 3

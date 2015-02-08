@@ -2107,7 +2107,10 @@ CB_gen_plus = {
 	cb_generation_speed_modifier = 0.25
 	icon = 15
 }
- 
+ CB_gen_debug = {
+	cb_generation_speed_modifier = 100
+	icon = 15
+}
 CB_gen_minus = {
 	cb_generation_speed_modifier = -0.25
 	icon = 16

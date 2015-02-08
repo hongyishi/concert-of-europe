@@ -471,6 +471,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = american_cultures
 			USA = { exists = no }
+			NOT = { has_country_flag = permanent_confederation} 
 		}
 		
 		allow = {
@@ -636,6 +637,7 @@ political_decisions = {
 			NOT = {
 				capital = 211
 			}
+			NOT = { has_country_flag = permanent_confederation }
 		}	
 		
 		allow = {

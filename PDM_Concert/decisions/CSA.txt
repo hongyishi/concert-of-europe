@@ -1,5 +1,57 @@
 political_decisions = {
-	
+	confederate_the_united_states = {
+		potential = {
+			tag = USA
+			upper_house = {
+					ideology = reactionary
+					value = 0.3
+			}
+			slavery = yes_slavery
+		}
+		allow = {
+			ruling_party_ideology = reactionary
+			upper_house = {
+					ideology = reactionary
+					value = 0.5
+			}
+		}
+		effect = {
+			all_core = {
+				remove_core = THIS
+				add_core = CSA
+			}
+			change_tag = CSA
+			CSA = {
+				set_country_flag = permanent_confederation
+				political_reform = appointed
+				political_reform = landed_voting
+				political_reform = harassment
+				any_pop = {
+					limit = {
+						has_pop_culture = dixie
+						OR = {
+							pop_type = soldiers
+							pop_type = officers
+							pop_type = capitalists
+							pop_type = aristocrats
+							pop_type = farmers
+						}
+						location = {
+							state_scope = {
+								is_slave = yes
+							}
+						}
+					}
+					ideology = { factor = 0.3 value = reactionary }
+				}
+				primary_culture = dixie
+				add_accepted_culture = yankee
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	raise_the_bonnie_blue_flag = {
 		potential = {
 			tag = CSA
@@ -198,6 +250,7 @@ political_decisions = {
 		potential = {
 			tag = CSA
 			has_global_flag = american_civil_war_has_happened
+			NOT = {has_country_flag = { second_constitutional_convention }}
 			NOT = { has_global_flag = declaration2 }
 		}
 		allow = {
@@ -696,7 +749,18 @@ political_decisions = {
 	annex_cuba = {
 		picture = golden_cuba
 		potential = {
-			tag = CSA
+			OR = {
+				AND = {
+					tag = CSA
+					has_country_flag = golden_cuba
+				}
+				AND = {
+					tag = USA
+					has_country_flag = ostend_manifesto_published
+					NOT = { any_owned = { is_core = CSA }
+				}
+			}
+			
 			exists = CUB
 			is_sphere_leader_of = CUB
 			CUB = {
@@ -706,7 +770,7 @@ political_decisions = {
 			has_country_flag = golden_cuba
 		}
 		allow = {
-			revolution_n_counterrevolution = 1
+			#revolution_n_counterrevolution = 1
 			is_sphere_leader_of = CUB
 		}
 		effect = {
@@ -729,7 +793,7 @@ political_decisions = {
 			has_country_flag = golden_circle_1
 		}
 		allow = {
-			revolution_n_counterrevolution = 1
+			#revolution_n_counterrevolution = 1
 			is_sphere_leader_of = PRI
 		}
 		effect = {
@@ -751,7 +815,7 @@ political_decisions = {
 			has_country_flag = golden_circle_1
 		}
 		allow = {
-			revolution_n_counterrevolution = 1
+			#revolution_n_counterrevolution = 1
 			is_sphere_leader_of = DOM
 		}
 		effect = {
@@ -782,11 +846,19 @@ political_decisions = {
 			}
 		}
 		allow = {
+			upper_house = {
+					ideology = reactionary
+					value = 0.5
+			}
 			war = no
 		}
 		effect = {
 			badboy = 3
 			treasury = 20000
+			upper_house = {
+				ideology = conservative
+				value = 0.5
+			}
 			any_pop = {
 				consciousness = 2
 			}

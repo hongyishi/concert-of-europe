@@ -517,4 +517,4 @@ the_concert_of_europe = {
 	}
 	global_pop_consciousness_modifier = -0.1
 	icon = 1
-}
+}	

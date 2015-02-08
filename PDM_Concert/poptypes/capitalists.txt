@@ -23,7 +23,7 @@ life_needs = {
 }
 everyday_needs = {
 	horses = 100
-	clipper_
+	clipper = 100
 	steel = 100
 	bronze = 100
 	cement = 100

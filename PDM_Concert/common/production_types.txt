@@ -1510,6 +1510,11 @@ RGO_template_farmers = {
 			effect_multiplier = 1.25
 			amount = 0.1
 		}
+		{ 
+			poptype = slaves 
+			effect = throughput
+			amount = 0.9
+		}
 	}
 	
 	type = rgo
@@ -1534,6 +1539,11 @@ RGO_template_labourers = {
 			effect = output
 			effect_multiplier = 1.25
 			amount = 0.1
+		}
+		{ 
+			poptype = slaves 
+			effect = throughput
+			amount = 0.9
 		}
 	}
 	

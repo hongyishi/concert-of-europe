@@ -524,6 +524,14 @@ promote_to = {
 			}
 		}
 		modifier = {
+			factor = -5
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+			}
+			tag = USA
+		}
+		modifier = {
 			factor = -50
 			state_scope = {
 				has_factories = no
@@ -2417,6 +2425,10 @@ ideologies = {
 		modifier = {
 			factor = 0.5
 			country = { civilized = no }
+		}
+		modifier = {
+			factor = 0.5
+			slavery = yes_slavery
 		}
 		modifier = {
 			factor = 1.2

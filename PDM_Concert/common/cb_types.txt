@@ -1785,7 +1785,7 @@ free_peoples = {
 			
 		}
 		OR = {
-			
+			THIS = { ai = no }
 			FROM = { NOT = { any_core = { owned_by = THIS } } }
 			FROM = { involved_in_crisis = yes }
 		}
@@ -1859,7 +1859,7 @@ free_peoples = {
 	allowed_states = {
 		OR = {
 			AND = {
-				
+				THIS = { ai = no }
 				any_owned_province = { is_core = FROM }
 			}
 			AND = {
@@ -1967,6 +1967,7 @@ free_peoples = {
 					tag = BUL
 					tag = SYL
 					tag = LUX
+					tag = OCC
 				}
 			}
 			AND = {
@@ -1988,6 +1989,15 @@ free_peoples = {
 					}
 				}
 				FROM = { tag = HUN }
+			}
+			AND = {
+				any_owned_province = {
+					OR = {
+						region = FRA_461
+						region = FRA_458
+					}
+				}
+				FROM = { tag = OCC }
 			}
 			AND = {
 				any_owned_province = { region = AUS_771 }
@@ -2104,7 +2114,7 @@ liberate_country = {
 			FROM = { involved_in_crisis = yes }
 		}
 		OR = {
-			
+			THIS = { ai = no }
 			FROM = { NOT = { any_core = { is_core = THIS } } }
 			FROM = { involved_in_crisis = yes }
 		}
@@ -2124,7 +2134,7 @@ liberate_country = {
 		}
 		OR = {
 			AND = {
-				
+				THIS = { ai = no }
 				any_owned_province = { is_core = FROM }
 			}
 			AND = {
@@ -3389,7 +3399,22 @@ place_in_the_sun = {
 				any_core = { civilized = no }
 			}
 			any_owned_province = { continent = africa }
-			
+			AND = {
+				any_owned_province = { 
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+				}
+				OR = {
+					THIS = { 
+						capital_scope = { continent = north_america }
+					}
+					THIS = { 
+						capital_scope = { continent = south_america }
+					}
+				}
+			}
 		}
 		OR = {
 			any_owned_province = { any_neighbor_province = { owned_by = THIS } }
@@ -3449,10 +3474,8 @@ place_in_the_sun_great_war = {
 	good_relation_militancy_factor = 1
 
 	can_use = {
-		AND = {
-			has_global_flag = great_wars_enabled
-			war_with = THIS
-		}
+		has_global_flag = great_wars_enabled
+		war_with = THIS
 		NOT = { is_our_vassal = THIS }
 		is_vassal = no
 		any_owned_province = { is_colonial = yes }
@@ -3614,7 +3637,7 @@ acquire_state = {
 			is_colonial = no
 			AND = {
 				is_colonial = yes
-				THIS = { ai = yes }
+				#THIS = { ai = yes }
 				any_owned_province = {
 					any_core = { civilized = yes }
 				}
@@ -3630,12 +3653,12 @@ acquire_state = {
 			any_owned_province = { is_capital = yes }
 		}
 		# Will not grab cores of great powers unless great wars have been enabled.
-		OR = { 
-			NOT = {
-				any_owned_province = { any_core = { is_greater_power = yes } }
-			}
-			has_global_flag = great_wars_enabled
-		}
+		#OR = { 
+		#	NOT = {
+		#		any_owned_province = { any_core = { is_greater_power = yes } }
+		#	}
+		#	has_global_flag = great_wars_enabled
+		#}
 		#AI can only grab neighboring states, coastal if it's a coastal GP
 		OR = {
 			
@@ -3694,9 +3717,10 @@ acquire_state = {
 		#pro-military AI will not grab cores of non-existing, non-union countries
 		#unless they own some cores or it's part of their culture group and they're pro-military
 		#jingoistic countries will also take states with existing cores that they also own some of
+		#until great wars have been enabled
 		#fascist & communist countries are exempt from this
 		OR = {
-			
+			has_global_flag = great_wars_enabled
 			THIS = { government = proletarian_dictatorship }
 			THIS = { government = fascist_dictatorship }
 			AND = {

@@ -24,7 +24,12 @@ political_decisions = {
 		}
 		allow = {
 			war = no
-			USA = { war = no }
+			USA = { 
+				war = no 
+				NOT = {
+					war_policy = pacifism
+				}
+			}
 			NOT = { truce_with = USA }
 			relation = {
 				who = USA

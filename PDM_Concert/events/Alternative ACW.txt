@@ -260,6 +260,91 @@ country_event = {
 		}
 	}
 }
+#Dissatisfaction in the North
+country_event = {
+	id = 16502
+	title = "EVTNAME16501"
+	desc = "EVTDESC16501"
+	picture = "senate_debate"
+
+	trigger = {
+		tag = CSA
+		exists = yes
+		has_country_flag = permanent_confederation
+		slavery = yes_slavery
+		NOT = {
+			has_global_flag = american_civil_war_has_happened
+			has_country_flag = second_constitutional_convention
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 10
+		}
+		modifier = {
+			factor = 0.1
+			is_greater_power = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1868
+		}
+		modifier = {
+			factor = 0.5
+			year = 1870
+		}
+	}
+	
+	option = {
+		name = "And what will this achieve, exactly?"
+		set_country_flag = second_constitutional_convention
+		set_variable = {
+			which = FSA_states
+			value = 1
+		}
+		random_owned = {
+			limit = {
+				OR = {
+					region = USA_223
+					region = USA_232
+					region = USA_243
+				}
+			}
+			state_scope = {
+				any_owned = { add_core = FSA }
+			}
+		}
+		any_state = {
+			limit = {
+				is_slave = no
+				is_colonial = no
+			}
+			any_pop = {
+				dominant_issue = {
+					value = no_slavery
+					factor = 0.10
+				}
+				ideology = {
+					value = liberal
+					factor = 0.20
+				}
+			}
+		}
+		any_pop = {
+			scaled_consciousness = {
+				ideology = liberal
+				factor = 6
+			}
+			scaled_militancy = {
+				ideology = anarcho_liberal
+				factor = 6
+			}
+		}
+	}
+}
 
 #New Secessionist Sentiments
 province_event = {
@@ -390,6 +475,73 @@ province_event = {
 		}
 	}
 }
+province_event = {
+	id = 16507
+	title = "EVTNAME16250"
+	desc = "EVTDESC16506"
+
+	trigger = {
+		NOT = { is_core = FSA }
+		is_core = CSA
+		OR = {
+			continent = north_america
+			continent = south_america
+		}
+		owner = {
+			tag = CSA
+			has_country_flag = permanent_confederation
+			slavery = yes_slavery
+			has_country_flag = second_constitutional_convention
+			NOT = { has_global_flag = american_civil_war_has_happened }
+		}
+		state_scope = { is_slave = no }
+		any_neighbor_province = { is_core = FSA }
+		OR = {
+			average_consciousness = 5
+			average_militancy = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			no_slavery = 10
+		}
+		modifier = {
+			factor = 0.8
+			average_consciousness = 7
+		}
+		modifier = {
+			factor = 0.8
+			average_consciousness = 9
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA16250"
+		owner = {
+			prestige = -2
+			change_variable = {
+				which = FSA_states
+				value = 1
+			}
+		}
+		state_scope = {
+			any_owned = {
+				add_core = FSA
+			}
+			any_pop = {
+				dominant_issue = {
+					value = no_slavery
+					factor = 0.20
+				}
+				militancy = 1
+			}
+		}
+	}
+}
+
 
 #The Free States of America
 country_event = {
@@ -404,13 +556,19 @@ country_event = {
 	major = yes
 
 	trigger = {
-		tag = USA
+		OR = {
+			tag = USA
+			AND = {
+				tag = CSA
+				has_country_flag = permanent_confederation
+			}
+		}
 		exists = yes
 		slavery = yes_slavery
 		has_country_flag = second_constitutional_convention
 		check_variable = {
 			which = FSA_states
-			value = 5
+			value = 10
 		}
 		NOT = {
 			has_global_flag = american_civil_war_has_happened
@@ -476,7 +634,6 @@ country_event = {
 		set_global_flag = alt_american_civil_war_has_happened
 		primary_culture = dixie
 		add_accepted_culture = yankee
-		remove_country_modifier = the_slavery_debate
 		add_country_modifier = {
 			name = csa_draft
 			duration = -1
@@ -543,7 +700,6 @@ country_event = {
 		set_global_flag = alt_american_civil_war_has_happened
 		primary_culture = dixie
 		add_accepted_culture = yankee
-		remove_country_modifier = the_slavery_debate
 		add_country_modifier = {
 			name = csa_draft
 			duration = -1
@@ -584,6 +740,13 @@ country_event = {
 							is_core = USA
 							culture = yankee
 						}
+					}
+					AND = {
+						CSA = {
+							has_country_flag = permanent_confederation
+						}
+						any_owned_province = { is_core = CSA}
+						is_slave = no
 					}
 				}
 			}
@@ -637,7 +800,6 @@ country_event = {
 	option = {
 		name = "All of America will be retaken. We swear it."
 		prestige = -50
-		clr_country_flag = the_slavery_debate
 		clr_global_flag = alt_american_civil_war_has_happened
 		random_owned = {
 			limit = { province_id = 211 }

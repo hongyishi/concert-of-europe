@@ -215,14 +215,25 @@ country_event = {
 	}
 	option = {
 		name = "No abolitionist nonsense for us!"
-			any_state = {
-				limit = {
-					is_slave = no
-				}
-				any_pop = {
-					consciousness = 2
+		any_state = {
+			limit = {
+				is_slave = no
+			}
+			any_pop = {
+				consciousness = 2
+			}
+		}
+		any_state = {
+			limit = {
+				is_slave = yes
+			}
+			any_pop = {
+				ideology = {
+					value = reactionary
+					factor = 0.05
 				}
 			}
+		}
 	}
 }
 

@@ -34,3 +34,4 @@ country_event = {
 		clr_global_flag = concert_of_europe
 	}
 }
+

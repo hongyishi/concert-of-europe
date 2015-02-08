@@ -26,3 +26,19 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	
+	id = 9999999999
+	title = "CB debug"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+		
+		add_country_modifier = {
+			name = CB_gen_debug
+			duration = 50
+		}
+	}
+}

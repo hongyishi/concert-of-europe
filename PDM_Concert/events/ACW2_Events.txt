@@ -19,7 +19,14 @@ country_event = {
 
 	major = yes
 	trigger = {
-		tag = USA
+		OR = {
+			tag = USA
+			AND = {
+				tag = CSA
+				has_country_flag = permanent_confederation
+			}
+		}
+				
 		exists = yes
 		war = no
 		NOT = { government = democracy }
